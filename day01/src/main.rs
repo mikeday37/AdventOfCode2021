@@ -1,18 +1,21 @@
 use std::fs;
 
+// new to rust -- my approach is barbaric.  :)
+// I intend to clean this up after learning more about Rust's ownership, re: error[E0382]
+
 fn main() {
     println!("-- start --");
 
-    let input = fs::read_to_string("../input/input-01-full.txt").expect("Problem reading input.");
-    let depths: Vec<u32> = input.lines().map(|line| line.parse().unwrap()).collect();
-
-    part1(depths);
-    part2(depths);
+    part1();
+    part2();
 
     println!("--  end  --");
 }
 
-fn part1(depths: Vec<u32>){
+fn part1(){
+
+    let input = fs::read_to_string("../input/input-01-full.txt").expect("Problem reading input.");
+    let depths: Vec<u32> = input.lines().map(|line| line.parse().unwrap()).collect();
 
     let mut first: bool = true;
     let mut increases: u32 = 0;
@@ -29,7 +32,10 @@ fn part1(depths: Vec<u32>){
     println!("part 1: increases = {}", increases);
 }
 
-fn part2(depths: Vec<u32>){
+fn part2(){
+
+    let input = fs::read_to_string("../input/input-01-full.txt").expect("Problem reading input.");
+    let depths: Vec<u32> = input.lines().map(|line| line.parse().unwrap()).collect();
 
     let mut index: i32 = -1;
 
