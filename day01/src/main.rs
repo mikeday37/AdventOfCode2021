@@ -3,8 +3,8 @@ use std::fs;
 fn main() {
     let input = fs::read_to_string("../input/input-01-full.txt").expect("Problem reading input.");
     let depths: Vec<u32> = input.lines().map(|line| line.parse().unwrap()).collect();
-    println!("part 1: {}", count_increases_in_window(&depths, 1));
-    println!("part 2: {}", count_increases_in_window(&depths, 3));
+    println!("part 1: {}", count_increases_in_window(&depths, 1)); // correct answer: 1759
+    println!("part 2: {}", count_increases_in_window(&depths, 3)); // correct answer: 1805
 }
 
 fn count_increases_in_window(values: &[u32], window_size: usize) -> u32 {
