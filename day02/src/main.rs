@@ -9,11 +9,11 @@ enum Command {
 fn parse_command(line: &str) -> Command {
     let mut parts = line.split(" ");
     match (parts.next().expect("command missing"), parts.next().expect("amount missing").parse::<i32>().expect("amount not i32")) {
-        ("forward", a) => Some(Command::Forward(a)),
-        ("down", a) => Some(Command::Down(a)),
-        ("up", a) => Some(Command::Up(a)),
-        _ => None
-    }.expect("invalid command")
+        ("forward", a) => Command::Forward(a),
+        ("down", a) => Command::Down(a),
+        ("up", a) => Command::Up(a),
+        _ => panic!("invalid command")
+    }
 }
 
 fn main() {
