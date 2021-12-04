@@ -72,8 +72,7 @@ fn get_rating(input: &BitGrid, most_common: bool) -> u32 { // there's a bunch of
     let mut index: isize = -1;
     while potentials.len() > 1 {
         index += 1;
-        let ones: Vec<&usize> = potentials.iter().filter(|row| input.bitvecs[**row][index as usize]).collect();
-        let zeroes: Vec<&usize> = potentials.iter().filter(|row| !input.bitvecs[**row][index as usize]).collect();
+        let [ones, zeroes]: [Vec<&usize>; 2] = [true, false].map(|b| potentials.iter().filter(|row| b == input.bitvecs[**row][index as usize]).collect());
         let keep_value = if ones.len() == zeroes.len() {most_common} else {(ones.len() > zeroes.len()) ^ !most_common};
         let keep = if keep_value {ones} else {zeroes};
         potentials = HashSet::from_iter(keep.iter().map(|row| **row));
