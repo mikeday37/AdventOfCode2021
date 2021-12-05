@@ -9,9 +9,9 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "${workspaceFolder}/day04/target/debug/day04.exe",
+			"program": "${workspaceFolder}/day05/target/debug/day05.exe",
 			"args": [],
-			"cwd": "${workspaceFolder}/day04",
+			"cwd": "${workspaceFolder}/day05",
 			"preLaunchTask": "cargo build"
 		}
 	]

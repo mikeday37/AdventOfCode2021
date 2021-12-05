@@ -7,7 +7,7 @@
 			"command": "cargo",
 			"args": ["build"],
 			"options": {
-				"cwd": "${workspaceFolder}/day04",
+				"cwd": "${workspaceFolder}/day05",
 			},
 			"problemMatcher": [
 				"$rustc"
